@@ -52,7 +52,7 @@ configuration = conf["project"]
 
 project = configuration["name"]
 author = f"{configuration['authors'][0]['name']} <{configuration['authors'][0]['email']}>"
-copyright = f"{datetime.datetime.now().year}, {configuration['authors'][0]}"
+copyright = f"{datetime.datetime.now().year}, {configuration['authors'][0]['name']}"
 
 release = get_distribution(configuration["name"]).version
 version = ".".join(release.split(".")[:2])
