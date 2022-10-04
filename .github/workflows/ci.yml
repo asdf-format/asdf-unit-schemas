@@ -72,11 +72,11 @@ jobs:
     name: Run schemas and dev extensions
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout asdf-transform-schemas
+      - name: Checkout asdf-unit-schemas
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          path: asdf-transform-schemas
+          path: asdf-unit-schemas
       - name: Checkout astropy dev
         uses: actions/checkout@v2
         with:
@@ -95,16 +95,16 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.9
-      - name: Install asdf-transform-schemas
-        run: cd asdf-transform-schemas && pip install .
+      - name: Install asdf-unit-schemas
+        run: cd asdf-unit-schemas && pip install .
       - name: Install astropy
         run: cd astropy && pip install -e .[all,test]
       - name: Install asdf-astropy
         run: cd asdf-astropy && pip install -e .[test]
       - name: Pip Freeze
         run: pip freeze
-      - name: Run asdf-transform-schemas development tests
-        run: cd asdf-transform-schemas && pytest
+      - name: Run asdf-unit-schemas development tests
+        run: cd asdf-unit-schemas && pytest
       - name: Run asdf-astropy development tests
         run: cd asdf-astropy && pytest
       - name: Run astropy development tests
