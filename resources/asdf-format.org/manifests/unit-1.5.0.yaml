@@ -1,6 +1,6 @@
 id: asdf://asdf-format.org/unit/manifests/unit-1.5.0
 extension_uri: asdf://asdf-format.org/unit/extensions/unit-1.5.0
-title: Transform extension 1.5.0
+title: Unit extension 1.5.0
 description: |-
   A set of tags for serializing units.
 tags:
