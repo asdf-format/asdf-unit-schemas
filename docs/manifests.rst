@@ -12,7 +12,3 @@ by a single manifest document for that version.
 
    unit-1.0.0
    unit-1.1.0
-   unit-1.2.0
-   unit-1.3.0
-   unit-1.4.0
-   unit-1.5.0
