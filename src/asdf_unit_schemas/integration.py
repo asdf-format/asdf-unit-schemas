@@ -1,6 +1,5 @@
-from pathlib import Path
-
 import importlib.resources
+from pathlib import Path
 
 from asdf_standard import DirectoryResourceMapping
 
@@ -18,12 +17,9 @@ def get_resource_mappings():
 
     return [
         DirectoryResourceMapping(
-            resources_root / "stsci.edu" / "schemas",
-            "asdf://stsci.edu/schemas/asdf/unit/",
-            recursive=True
+            resources_root / "stsci.edu" / "schemas", "asdf://stsci.edu/schemas/asdf/unit/", recursive=True
         ),
         DirectoryResourceMapping(
-            resources_root / "asdf-format.org" / "manifests",
-            "asdf://asdf-format.org/unit/manifests/"
+            resources_root / "asdf-format.org" / "manifests", "asdf://asdf-format.org/unit/manifests/"
         ),
     ]
