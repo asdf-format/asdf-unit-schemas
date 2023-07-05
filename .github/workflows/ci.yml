@@ -82,14 +82,12 @@ jobs:
         with:
           fetch-depth: 0
           repository: astropy/astropy
-          ref: main
           path: astropy
       - name: Checkout asdf-astropy dev
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
           repository: astropy/asdf-astropy
-          ref: main
           path: asdf-astropy
       - name: Set up Python 3.9
         uses: actions/setup-python@v2

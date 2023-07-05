@@ -1,0 +1,23 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 6285d20
+_src_path: ../template
+author_email: help@stsci.edu
+author_name: The ASDF Developers
+downstream_packages:
+    asdf:
+        install: pip install asdf[test]@https://github.com/asdf-format/asdf@main
+        test: pytest asdf
+github_org: asdf-format
+manifest_org_uri: asdf-format.org
+module_name: asdf_unit_schemas
+project_name: asdf-unit-schemas
+project_uri_stub: unit
+project_url: https://github.com/asdf-format/asdf-unit-schemas
+readme_text: 'This package provides ASDF schemas for validating unit tags.  Users
+    should not
+
+    need to install this directly; instead, install an implementation package such
+
+    as asdf-astropy, which includes asdf-unit-schemas as a dependency.'
+schema_org_uri: stsci.edu
+short_name: ASDF unit schemas
