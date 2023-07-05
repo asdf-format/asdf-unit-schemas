@@ -21,7 +21,7 @@ readme_text: 'This package provides ASDF schemas for validating unit tags.  User
 
     as asdf-astropy, which includes asdf-unit-schemas as a dependency.'
 schema_uri_org: stsci.edu
-schema_uri_scheme: asdf
+schema_uri_scheme: http
 short_name: ASDF unit schemas
 test_dependencies:
 - asdf >= 2.8.0
