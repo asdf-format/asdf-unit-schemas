@@ -1,6 +1,6 @@
 .. _asdf-unit-schemas:
 
-.. literalinclude:: intro.rst
+.. include:: intro.rst
 
 Included Resources
 ==================
@@ -13,7 +13,7 @@ The following are listings of all the schemas provided by this package for ASDF.
   ASDF to look up the correct schema version corresponding to the tag depending on
   the manifest in use.
 
-.. literalinclude:: schemas.rst
+.. include:: schemas.rst
 
 Developer Resources
 ===================
