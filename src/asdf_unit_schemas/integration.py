@@ -20,9 +20,10 @@ def get_resource_mappings():
         DirectoryResourceMapping(
             resources_root / "stsci.edu" / "schemas",
             "asdf://stsci.edu/schemas/asdf/unit/",
+            recursive=True
         ),
         DirectoryResourceMapping(
             resources_root / "asdf-format.org" / "manifests",
-            "asdf://asdf-format.org/unit/manifests/",
+            "asdf://asdf-format.org/unit/manifests/"
         ),
     ]
