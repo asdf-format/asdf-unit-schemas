@@ -92,7 +92,7 @@ jobs:
       - name: Set up Python 3.10
         uses: actions/setup-python@v2
         with:
-          python-version: 3.10
+          python-version: '3.10'
       - name: Install asdf-unit-schemas
         run: cd asdf-unit-schemas && pip install .
       - name: Install astropy
