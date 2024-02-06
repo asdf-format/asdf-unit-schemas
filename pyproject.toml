@@ -1,6 +1,6 @@
 [project]
 name = 'asdf_unit_schemas'
-description = 'ASDF schemas for units'
+description = 'DEPRECATED: ASDF schemas for units'
 readme = 'README.md'
 requires-python = '>=3.8'
 license = { file = 'LICENSE' }
@@ -14,8 +14,6 @@ classifiers = [
     'Development Status :: 5 - Production/Stable',
 ]
 dependencies = [
-    'asdf-standard >= 1.0.1',
-    'importlib_resources >= 3; python_version<"3.9"',
 ]
 dynamic = ['version']
 
@@ -23,18 +21,9 @@ dynamic = ['version']
 docs = [
     'tomli',
     'sphinx',
-    'sphinx-asdf >= 0.1.3',
-    'sphinx-astropy',
-    'astropy >= 5.0.4',
-    'graphviz',
-    'matplotlib',
-    'docutils',
     'sphinx-rtd-theme',
 ]
 test = [
-    'asdf >= 2.8.0',
-    'asdf-astropy',
-    'scipy',
     'pytest',
 ]
 
@@ -42,9 +31,6 @@ test = [
 'tracker' = 'https://github.com/asdf-format/asdf-unit-schemas/issues'
 'documentation' = 'https://asdf-unit-schemas.readthedocs.io/en/stable'
 'repository' = 'https://github.com/asdf-format/asdf-unit-schemas'
-
-[project.entry-points]
-'asdf.resource_mappings' = { asdf_unit_schemas = 'asdf_unit_schemas.integration:get_resource_mappings' }
 
 [build-system]
 requires = [
@@ -58,22 +44,14 @@ build-backend = "setuptools.build_meta"
 write_to = "src/asdf_unit_schemas/_version.py"
 
 [tool.setuptools]
-packages = ["asdf_unit_schemas", "asdf_unit_schemas.resources"]
-
-[tool.setuptools.package-data]
-"asdf_unit_schemas.resources" = ["resources/**/*.yaml"]
+packages = ["asdf_unit_schemas"]
 
 [tool.setuptools.package-dir]
 '' = "src"
-"asdf_unit_schemas.resources" = "resources"
 
 [tool.pytest.ini_options]
-asdf_schema_root = 'resources/stsci.edu/schemas'
-asdf_schema_tests_enabled = 'true'
-asdf_schema_ignore_unrecognized_tag = 'true'
 testpaths = """
     tests
-    resources
 """
 addopts = '--color=yes'
 
