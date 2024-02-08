@@ -25,6 +25,7 @@ docs = [
 ]
 test = [
     'pytest',
+    'asdf',
 ]
 
 [project.urls]
