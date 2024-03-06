@@ -77,13 +77,6 @@ jobs:
         with:
           fetch-depth: 0
           path: asdf-unit-schemas
-      - name: Checkout astropy dev
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          repository: astropy/astropy
-          ref: main
-          path: astropy
       - name: Checkout asdf-astropy dev
         uses: actions/checkout@v2
         with:
@@ -97,8 +90,6 @@ jobs:
           python-version: 3.9
       - name: Install asdf-unit-schemas
         run: cd asdf-unit-schemas && pip install .
-      - name: Install astropy
-        run: cd astropy && pip install -e .[all,test]
       - name: Install asdf-astropy
         run: cd asdf-astropy && pip install -e .[test]
       - name: Pip Freeze
@@ -107,5 +98,3 @@ jobs:
         run: cd asdf-unit-schemas && pytest
       - name: Run asdf-astropy development tests
         run: cd asdf-astropy && pytest
-      - name: Run astropy development tests
-        run: cd astropy && pytest astropy/io/misc/asdf

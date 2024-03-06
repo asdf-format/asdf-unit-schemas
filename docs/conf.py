@@ -28,20 +28,8 @@ import sys
 from pathlib import Path
 
 # Ensure documentation examples are determinstically random.
-import numpy
 import tomli
 from pkg_resources import get_distribution
-
-try:
-    numpy.random.seed(int(os.environ["SOURCE_DATE_EPOCH"]))
-except KeyError:
-    pass
-
-try:
-    from sphinx_astropy.conf.v1 import *  # noqa
-except ImportError:
-    print("ERROR: the documentation requires the sphinx-astropy package to be installed")
-    sys.exit(1)
 
 # Get configuration information from `pyproject.toml`
 with open(Path(__file__).parent.parent / "pyproject.toml", "rb") as configuration_file:
@@ -60,23 +48,9 @@ version = ".".join(release.split(".")[:2])
 # If your documentation needs a minimal Sphinx version, state it here.
 # needs_sphinx = '1.2'
 
-intersphinx_mapping["pypa-packaging"] = ("https://packaging.python.org/en/latest/", None)  # noqa
-intersphinx_mapping["asdf"] = ("https://asdf.readthedocs.io/en/latest/", None)  # noqa
-intersphinx_mapping["asdf-standard"] = ("https://asdf-standard.readthedocs.io/en/latest/", None)  # noqa
-intersphinx_mapping["asdf-astropy"] = ("https://asdf-astropy.readthedocs.io/en/latest/", None)  # noqa
-intersphinx_mapping["pytest"] = ("https://docs.pytest.org/en/latest/", None)  # noqa
-
 # To perform a Sphinx version check that needs to be more specific than
 # major.minor, call `check_sphinx_version("x.y.z")` here.
 # check_sphinx_version("1.2.1")
-
-# List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-exclude_patterns.append("_templates")  # noqa
-
-# This is added to the end of RST files - a good place to put substitutions to
-# be used globally.
-rst_epilog += """"""  # noqa
 
 # -- Project information ------------------------------------------------------
 
@@ -142,16 +116,3 @@ latex_logo = "_static/logo.pdf"
 man_pages = [("index", project.lower(), project + " Documentation", [author], 1)]
 
 sys.path.insert(0, os.path.join(os.path.abspath(os.path.dirname("__file__")), "sphinxext"))
-extensions += ["sphinx_asdf"]  # noqa
-
-
-def setup(app):
-    app.add_css_file("custom.css")
-
-
-# -- sphinx_asdf configuration ---------------------------------------------
-
-# Top-level directory containing ASDF schemas (relative to current directory)
-asdf_schema_path = "../resources/stsci.edu"
-# This is the prefix common to all schema IDs in this repository
-asdf_schema_standard_prefix = "schemas"
