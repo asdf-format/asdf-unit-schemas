@@ -1,4 +1,4 @@
-0.1.1 (Unreleased)
+0.2.0 (2024-03-07)
 ------------------
 
 - Remove duplicate unit manifests [#5]
